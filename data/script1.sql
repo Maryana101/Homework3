@@ -2,9 +2,9 @@ drop database if exists employee;
 create database employee;
 use employee;
 
-create table depart
+create table department
 (
-departID int not null auto_increment primary key,
+departmentID int not null auto_increment primary key,
 name varchar(30)
 ) type=InnoDB;
 create table employee
@@ -12,8 +12,8 @@ create table employee
 employeeID int not null auto_increment primary key,
 name varchar(80),
 job varchar(30),
-departID int not null references
-depart(departID)
+departmentID int not null references
+department(departmentID)
 ) type=InnoDB;
 create table employeeSkills
 (
